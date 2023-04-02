@@ -8,5 +8,5 @@ docker run --init --rm -it \
 	--env "TZ=$TZ" \
 	--volume $(realpath ./wsrc):/wsrc:ro \
 	--volume $(realpath ./mut):/mut:rw \
-	-p 8000:80 \
+	-p 8000:8000 \
 	wwebs:latest

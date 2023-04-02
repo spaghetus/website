@@ -8,4 +8,4 @@ RUN apt-get update && apt-get install -y pandoc texlive-latex-recommended && rm 
 RUN npm i -g handlebars
 COPY --from=builder /wwebs /bin/wwebs
 WORKDIR /wsrc
-CMD wwebs -h 80
+CMD wwebs -h 8000
