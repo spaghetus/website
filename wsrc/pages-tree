@@ -1,0 +1,33 @@
+#!/bin/bash
+cat static/header.html
+
+echo '<title>Posts in tree</title></head><body>'
+
+
+# Get the URL under the root
+if [[ $REQUESTED == /pages-tree ]]
+then
+  REQUESTED=$REQUESTED/
+fi
+REQUESTED=${REQUESTED#/pages-tree/}
+# Get the pages in order
+PAGES="$(find page-src)"
+if [[ $REQUESTED == "" ]]; then
+	echo "<h1>All posts (Tree)</h1>"
+else
+	echo "<h1>Posts under $REQUESTED (Tree)</h1>"
+fi
+echo "<ul>"
+for page in $PAGES; do
+	if [ -d $page ]; then
+		true
+	else
+		page=${page#page-src/}
+		if [[ $page == $REQUESTED* ]]; then
+			echo "<li><a href=\"/page/$page.html\">$page</a> - Updated $(date -r page-src/$page), $(wc -w page-src/$page | cut -d ' ' -f 1) words.</li>"
+		fi
+	fi
+done
+echo "</ul>"
+
+cat static/footer.html

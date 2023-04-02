@@ -1,11 +1,4 @@
 #!/bin/bash
 
-cat static/header.html
-
-echo '<title>Document</title>'
-
-echo '</head><body>'
-
-cat static/index.html
-
-cat static/footer.html
+>&2 echo status 301
+>&2 echo header Location /page/index.md.html

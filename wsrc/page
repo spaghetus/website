@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Get the URL
+REQUESTED=${REQUESTED#/page/}
+
+# Check whether the file exists
+make --dry-run "/mut/page-built/$REQUESTED" > /dev/null
+if [ $? -eq 1 ]; then
+	>&2 echo status 404
+	exit 0
+fi
+
+make "/mut/page-built/$REQUESTED" > /dev/null
+
+NAME=$(basename $REQUESTED)
+EXTENSION="${NAME##*.}"
+
+if [[ $EXTENSION == html ]]; then
+	cat static/header.html
+	echo "<title>$REQUESTED</title>"
+	echo '</head><body>'
+	cat "/mut/page-built/$REQUESTED"
+	>&2 echo 'header Content-Type text/html'
+
+	echo "<p><i>Last modified on $(date -r page-src/$(basename $REQUESTED .html))</i></p>"
+
+	cat static/footer.html
+else
+	cat "/mut/page-built/$REQUESTED"
+fi
