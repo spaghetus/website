@@ -22,7 +22,7 @@ if [[ $EXTENSION == html ]]; then
 	cat "/mut/page-built/$REQUESTED"
 	>&2 echo 'header Content-Type text/html'
 
-	echo "<p><i>Last modified on $(date -r page-src/$(basename $REQUESTED .html))</i></p>"
+	echo "<p><i>Last modified on $(date -r page-src/${REQUESTED%.html})</i></p>"
 
 	cat static/footer.html
 else
