@@ -1,5 +1,10 @@
 {
 	"files.associations": {
 		"*.html": "plaintext"
-	}
+	},
+	"cSpell.words": [
+		"chrono",
+		"makefiles",
+		"pandoc"
+	]
 }
