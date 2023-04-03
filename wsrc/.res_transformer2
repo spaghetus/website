@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat
+
+if [[ $PROTO == Gemini ]]; then
+	echo "This server is primarily built for HTTP clients. Please don't be too disappointed if some of it doesn't work."
+fi
