@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if [[ $PROTO == Gemini ]]; then
-	if [[ $REQUESTED == *.html ]]; then
-		>&2 echo "status 302"
-		>&2 echo "header Location $(dirname $REQUESTED)/$(basename $REQUESTED).gem"
-	fi
-fi

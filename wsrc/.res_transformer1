@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cat
-
->&2 echo header Content-Security-Policy "default-src 'self'; style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css; font-src https://davidar.github.io/linja-pona/linja-pona-4.1.woff;"
