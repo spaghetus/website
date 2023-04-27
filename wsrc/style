@@ -1,0 +1,16 @@
+#!/bin/bash
+
+>&2 echo header Content-Type text/css
+
+if [[ $HEADER_Cookie_X_DarkMode == 1 ]]; then
+	echo '@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css");'
+else
+	echo '@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-light.min.css");'
+fi
+
+cat static/style.css
+
+echo
+if [[ $HEADER_Cookie_X_DarkMode == 1 ]]; then
+	cat static/dark.css
+fi

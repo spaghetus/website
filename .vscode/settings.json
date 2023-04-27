@@ -1,7 +1,4 @@
 {
-	"files.associations": {
-		"*.html": "plaintext"
-	},
 	"cSpell.words": [
 		"chrono",
 		"EPUB",

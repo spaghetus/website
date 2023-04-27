@@ -1,0 +1,26 @@
+#!/bin/bash
+
+cat ../static/header.html
+
+echo '<a href=".."> ← Back </a>'
+
+echo "<title>Settings</title>"
+echo '</head><body><ul>'
+echo '<li>This area lets you choose how the server will display this website to you.</li>'
+echo '<li>Your preferences are stored as cookies on your device.</li>'
+echo "<li>The following are the cookies we're receiving from your computer.</li>"
+echo '</ul>'
+
+printf "<pre data-code-tag=\"HTTP Headers Received by Server\" class=\"language-toml\"><code>"
+env | grep HEADER_Cookie_ | while read pair; do
+	NAME=$(echo $pair | cut -d= -f1 | sed s/HEADER_Cookie_//)
+	CONTENT=$(echo $pair | cut -d= -f2-)
+	echo $NAME = \'$CONTENT\'
+done
+echo "</code></pre>"
+
+cat << EOF
+<a href="page-settings/toggle-dark-mode">Toggle Dark Mode</a>
+EOF
+
+echo '</body></html>'

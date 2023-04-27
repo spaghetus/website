@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DARK_MODE=$HEADER_Cookie_X_DarkMode
+
+if ! [[ $((DARK_MODE+0)) == $DARK_MODE ]]; then 
+   >&2 echo Dark mode is not a number, instead $DARK_MODE
+   DARK_MODE=0
+fi
+
+DARK_MODE=$((1-DARK_MODE))
+
+>&2 echo "header Set-Cookie X-DarkMode=$DARK_MODE; Path=/"
+
+>&2 echo header Location /page-settings
+>&2 echo status 302

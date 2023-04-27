@@ -1,5 +1,5 @@
 FROM rust AS builder
-RUN cargo install --git https://github.com/spaghetus/wwebs && \
+RUN cargo install --git https://github.com/spaghetus/wwebs --rev 51c13e6a4bedfe02a6bf964ed92b9d3e844ea3a4 && \
 	cp $(which wwebs) /wwebs
 
 FROM node
