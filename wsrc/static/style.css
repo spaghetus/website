@@ -72,6 +72,7 @@ pre {
 	box-shadow: 0 0 8px black inset;
 	transition: all 0.25s;
 	max-height: 50vh;
+	min-height: 10em;
 	overflow-y: scroll;
 	overflow-wrap: normal;
 }
