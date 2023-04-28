@@ -2,8 +2,6 @@
 
 cat ../static/header.html
 
-echo '<a href=".."> ← Back </a>'
-
 echo "<title>Settings</title>"
 echo '</head><body><ul>'
 echo '<li>This area lets you choose how the server will transmit this website to you.</li>'
@@ -23,4 +21,4 @@ cat << EOF
 <a href="page-settings/toggle-dark-mode">Toggle Dark Mode</a>
 EOF
 
-echo '</body></html>'
+cat ../static/footer.html
