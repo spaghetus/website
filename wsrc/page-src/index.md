@@ -1,6 +1,8 @@
-# Welcome to my weird and horrifying website
+# Welcome to my weird website
 
-This website's pages are generated using bash, makefiles, and pandoc, without a separate build step: `make` is called to update the generated version of each page as you request it.
+Hello! My name is Willow, and I like to make things that help make lives easier, more fun, or preferably both.
+
+I made this website with my bespoke webserver, [wwebs](https://github.com/spaghetus/wwebs). I've put thought into making it highly usable in all kinds of environments and for all kinds of people. If this website is difficult for you to use, or if it doesn't work well in a (reasonably recent) web browser, please let me know by [filing an issue](https://github.com/spaghetus/website/issues).
 
 To view the list of pages on this website in chronological order, see [/pages-chrono](/pages-chrono). You can use a path stub under `/pages-chrono` to filter by path, like [/pages-chrono/blog](/pages-chrono/blog). You can do the same things on [/pages-tree](/pages-tree) to view the pages alphabetically.
 

@@ -7,6 +7,10 @@ pre {
 	background-color: #2a1f2a;
 }
 
+code {
+	color: white;
+}
+
 hr+div.hr>span {
 	background-color: #3a1f3a;
 }

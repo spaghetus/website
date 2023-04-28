@@ -1,5 +1,6 @@
 #!/bin/bash
 cat static/header.html
+>&2 echo 'header Content-Type text/html'
 
 echo '<title>Posts in order</title></head><body>'
 

@@ -13,10 +13,16 @@
 	src: url('/font/hyperlegible.woff2');
 }
 
+@font-face {
+	font-family: firacode;
+	src: url('/font/firacode.woff2');
+}
+
 * {
 	font-feature-settings: "liga" 1, "clig" 1, "calt" 1, "kern" 1, "mark" 1;
 	text-rendering: optimizeLegibility;
 	font-family: hyperlegible;
+	font-variant-ligatures: normal;
 }
 
 body {
@@ -87,8 +93,38 @@ code {
 	background: none !important;
 	margin: 0 !important;
 	padding: 0 !important;
-	font-family: monospace;
+	font-family: firacode;
 	font-size: medium;
+	font-feature-settings: "liga" 1, "clig" 1, "calt" 1, "kern" 1, "mark" 1;
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: normal;
+}
+
+code span {
+	font-family: firacode;
+}
+
+pre.sourceCode:after {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 6px;
+	padding-right: 24px;
+	padding-left: 24px;
+	background-color: #9b4dca;
+	border-radius: 13px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	font-family: firacode;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 0 8px black;
+	transition: all 0.25s;
+}
+
+pre:hover.sourceCode:after {
+	opacity: 20%;
+	box-shadow: none;
 }
 
 pre[data-code-tag]:after {
@@ -102,6 +138,7 @@ pre[data-code-tag]:after {
 	border-radius: 13px;
 	border-top-left-radius: 0px;
 	border-bottom-right-radius: 0px;
+	font-family: firacode;
 	color: white;
 	font-weight: bold;
 	content: attr(data-code-tag);
@@ -112,4 +149,12 @@ pre[data-code-tag]:after {
 pre:hover[data-code-tag]:after {
 	opacity: 20%;
 	box-shadow: none;
+}
+
+section.footnotes ol p {
+	display: inline;
+}
+
+section.footnotes a.footnote-back {
+	display: none;
 }
