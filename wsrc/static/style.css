@@ -48,7 +48,8 @@ hr+div.hr>span {
 	content: attr("data-text");
 	position: relative;
 	padding: 4px 8px;
-	top: -14px;
+	padding-top: 6px;
+	top: -12px;
 	border: 1px solid gray;
 }
 

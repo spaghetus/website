@@ -6,3 +6,7 @@ body {
 pre {
 	background-color: #2a1f2a;
 }
+
+hr+div.hr>span {
+	background-color: #3a1f3a;
+}
