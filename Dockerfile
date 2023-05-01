@@ -9,6 +9,7 @@ RUN apt-get update && \
 	wget -O /tmp/mimic.deb https://github.com/MycroftAI/mimic3/releases/download/release%2Fv0.2.4/mycroft-mimic3-tts_0.2.4_amd64.deb && \
 	apt-get install -y /tmp/mimic.deb && \
 	rm -rf /var/lib/apt/lists /tmp/mimic.deb
+RUN mimic3 --preload-voice en_US/cmu-arctic_low
 RUN npm i -g handlebars
 COPY --from=builder /wwebs /bin/wwebs
 WORKDIR /wsrc
