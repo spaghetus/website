@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DYSLEXIC_MODE=$HEADER_Cookie_X_Dyslexic
+
+>&2 env
+
+if ! [[ $((DYSLEXIC_MODE+0)) == $DYSLEXIC_MODE ]]; then 
+   >&2 echo Dyslexic setting is not a number, instead $DYSLEXIC_MODE
+   DYSLEXIC_MODE=0
+fi
+
+DYSLEXIC_MODE=$((1-DYSLEXIC_MODE))
+
+>&2 echo "header Set-Cookie X-Dyslexic=$DYSLEXIC_MODE; Path=/"
+
+>&2 echo header Location /page-settings
+>&2 echo status 302

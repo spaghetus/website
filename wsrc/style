@@ -8,9 +8,17 @@ else
 	echo '@import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-light.min.css");'
 fi
 
+echo
 cat static/style.css
 
 echo
 if [[ $HEADER_Cookie_X_DarkMode == 1 ]]; then
 	cat static/dark.css
+fi
+
+echo
+if [[ $HEADER_Cookie_X_Dyslexic == 1 ]]; then
+	cat static/dyslexic.css
+else
+	cat static/fonts.css
 fi

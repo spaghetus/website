@@ -1,23 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css");
 
-@font-face {
-	font-family: linja-pona;
-	src: url('https://davidar.github.io/linja-pona/linja-pona-4.1.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: hyperlegible;
-	src: url('/font/hyperlegible.woff2');
-}
-
-@font-face {
-	font-family: firacode;
-	src: url('/font/firacode.woff2');
-}
-
 * {
 	font-feature-settings: "liga" 1, "clig" 1, "calt" 1, "kern" 1, "mark" 1;
 	text-rendering: optimizeLegibility;

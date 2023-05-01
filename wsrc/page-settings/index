@@ -20,6 +20,8 @@ echo "</code></pre>"
 
 cat << EOF
 <a href="page-settings/toggle-dark-mode">Toggle Dark Mode</a>
+<br>
+<a href="page-settings/toggle-dyslexic-font">Toggle Dyslexic Fonts</a>
 EOF
 
 cat ../static/footer.html
