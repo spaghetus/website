@@ -2,6 +2,9 @@ FROM rust AS builder
 RUN cargo install --git https://github.com/spaghetus/wwebs --rev 51c13e6a4bedfe02a6bf964ed92b9d3e844ea3a4 && \
 	cp $(which wwebs) /wwebs
 
+FROM docker.io/denoland/deno AS deno
+RUN cp $(which deno) /deno
+
 FROM node
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
@@ -12,5 +15,6 @@ RUN apt-get update && \
 RUN mimic3 --preload-voice en_US/cmu-arctic_low
 RUN npm i -g handlebars
 COPY --from=builder /wwebs /bin/wwebs
+COPY --from=deno /deno /bin/deno
 WORKDIR /wsrc
 CMD wwebs -h 8000

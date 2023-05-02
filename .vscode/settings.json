@@ -1,9 +1,10 @@
 {
-	"cSpell.words": [
-		"chrono",
-		"EPUB",
-		"firacode",
-		"makefiles",
-		"pandoc"
-	]
+  "cSpell.words": [
+    "chrono",
+    "EPUB",
+    "firacode",
+    "makefiles",
+    "pandoc"
+  ],
+  "deno.enable": true
 }

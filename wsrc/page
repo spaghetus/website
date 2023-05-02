@@ -30,7 +30,7 @@ if [[ $EXTENSION == html ]]; then
 	"
 
 	echo "<ul>"
-	echo "<li>Listen: <audio controls src=\"/page/$(basename $REQUESTED .html).wav\" preload=\"none\"></audio></li>"
+	echo "<li>Listen: <audio controls src=\"/page/${REQUESTED%.html}.wav\" preload=\"none\"></audio></li>"
 	echo "<li><a href=\"/page/$(basename $REQUESTED .html).pdf\">PDF</a></li>"
 	echo "<li><a href=\"/page/$(basename $REQUESTED .html).epub\">EPUB</a></li>"
 	echo "</ul>"
