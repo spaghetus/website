@@ -1,5 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css");
+@import url("/characters.ts");
 
 * {
 	font-feature-settings: "liga" 1, "clig" 1, "calt" 1, "kern" 1, "mark" 1;
@@ -140,4 +141,77 @@ section.footnotes ol p {
 
 section.footnotes a.footnote-back {
 	display: none;
+}
+
+div.character {
+	border-radius: 64px;
+	border-style: solid;
+	border-color: black;
+	font-size: larger;
+	margin: 0;
+	padding: 12px;
+	display: flex;
+	flex-direction: row;
+	min-height: 128px;
+	padding-left: 128px;
+	position: relative;
+	background-size: 128px 128px;
+	background-position: 0vw calc(100%);
+	background-repeat: no-repeat;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+
+	10% {
+		transform: translate(-1px, -2px) rotate(-0.5deg);
+	}
+
+	20% {
+		transform: translate(-3px, 0px) rotate(0.5deg);
+	}
+
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+
+	40% {
+		transform: translate(1px, -1px) rotate(0.5deg);
+	}
+
+	50% {
+		transform: translate(-1px, 2px) rotate(-0.5deg);
+	}
+
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+
+	70% {
+		transform: translate(3px, 1px) rotate(-0.5deg);
+	}
+
+	80% {
+		transform: translate(-1px, -1px) rotate(0.5deg);
+	}
+
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(1px, -2px) rotate(-0.5deg);
+	}
+}
+
+div.character.yell {
+	font-size: xx-large;
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+
+div.character::before {
+	padding-right: 0.5em;
 }
